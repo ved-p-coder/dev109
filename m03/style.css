@@ -24,6 +24,4 @@ i {
     color: darkgreen;
 }
 
-a {
-    color: inherit; /* This will make links use the same color as their parent element */
-}
+
