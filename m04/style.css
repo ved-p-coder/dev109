@@ -1,0 +1,93 @@
+* {
+    font-family: Arial, Verdana, sans-serif;
+    color: #665544;
+    text-align: center;
+}
+
+body {
+    width: 90%;
+    margin: 0 auto;
+    background-image: url("https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=1000&auto=format&fit=crop");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#content {
+    overflow: auto;
+}
+
+#nav, #feature, #footer {
+    margin: 1%;
+}
+
+.column1, .column2, .column3 {
+    width: 31.3%;
+    float: left;
+    margin: 1%;
+}
+
+.column3 {
+    margin-right: 0%;
+}
+
+li {
+    display: inline;
+    padding: 0.5em;
+}
+
+#header h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    color: #FF9900;
+}
+
+#nav {
+    background-color: #B257A5;
+    padding: 0.5em 0;
+}
+
+#nav a {
+    color: white;
+    text-decoration: none;
+}
+
+#feature {
+    height: 10em;
+    margin-bottom: 1em;
+    background-color: #8CC63E;
+    background-image: url("https://clipart-library.com/images/8cAEyjngi.png");
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+.article {
+    height: 10em;
+    margin-bottom: 1em;
+}
+
+.column1 {
+    background-color: #F294B7;
+}
+
+.column2 {
+    background-color: #9D1C44;
+}
+
+.column2 p {
+    color: white;
+}
+
+.column3 {
+    background-color: #E8A7A7;
+}
+
+#footer {
+    background-color: #B257A5;
+    padding: 0.5em 0;
+    clear: both;
+}
+
+#footer p {
+    color: white;
+}
