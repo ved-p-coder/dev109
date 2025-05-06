@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>M05 - Bullseye</title>
+  <link rel="stylesheet" href="c04.css" />
+</head>
+<body>
+  <section id="page2">
+    <h1>Bullseye</h1>
+    <img src="https://javascriptbook.com/code/c04/images/teacher.png" id="teacher2" alt="Teacher" />
+    <section id="blackboard"></section>
+  </section>
 
+  <script>
+    // Get the element to update the content
+    var el = document.getElementById('blackboard');
+
+    // Prompt the user for a number from 0-10
+    var userNumber = prompt('Please enter a number from 0 to 10 for the multiplication table:', '5');
+    
+    // Check if the user input is valid (not null and is a number)
+    // If not valid, default to 0
+    if (userNumber === null || isNaN(parseInt(userNumber))) {
+      userNumber = 0;
+    } else {
+      userNumber = parseInt(userNumber);
+    }
+
+    // Initialize the message with a heading
+    var msg = '<h2>Multiplication Table</h2>';
+
+    // Create the multiplication table
+    for (var i = 1; i <= 10; i++) {
+      // For each row, calculate the result of multiplying by userNumber
+      var result = i * userNumber;
+      
+      // Add the calculation to the message
+      msg += i + ' x ' + userNumber + ' = ' + result + '<br>';
+    }
+
+    // Update the blackboard with the message
+    el.innerHTML = msg;
+  </script>
+</body>
+</html>
