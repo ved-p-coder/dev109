@@ -2,24 +2,23 @@
 <html>
 <head>
   <title>M05 - Bullseye</title>
-  <link rel="stylesheet" href="c04.css" />
+  <link rel="stylesheet" href="c04.css" >
 </head>
 <body>
   <section id="page2">
     <h1>Bullseye</h1>
-    <img src="https://javascriptbook.com/code/c04/images/teacher.png" id="teacher2" alt="Teacher" />
+    <img src="https://javascriptbook.com/code/c04/images/teacher.png" id="teacher2" alt="Teacher" >
     <section id="blackboard"></section>
   </section>
 
   <script>
-    // Get the element to update the content
+    
     var el = document.getElementById('blackboard');
 
     // Prompt the user for a number from 0-10
     var userNumber = prompt('Please enter a number from 0 to 10 for the multiplication table:', '5');
     
     // Check if the user input is valid (not null and is a number)
-    // If not valid, default to 0
     if (userNumber === null || isNaN(parseInt(userNumber))) {
       userNumber = 0;
     } else {
