@@ -1,25 +1,62 @@
-function createRhombus(pHeight, pColorEven, pColorOdd, pSymbol) {
-  let rhombusStr = "";
+function createRhombus() {
+  const height = parseInt(document.getElementById("rHeight").value);
+  const colorEven = document.getElementById("colorEven").value;
+  const colorOdd = document.getElementById("colorOdd").value;
+  const symbol = document.getElementById("symbol").value;
 
-  // Top half
-  for (let i = 0; i < pHeight; i++) {
-    rhombusStr += "&nbsp;".repeat((pHeight - i - 1) * 2); // padding
+  upRight(height, colorEven, colorOdd, symbol);
+  downRight(height, colorEven, colorOdd, symbol);
+  upLeft(height, colorEven, colorOdd, symbol);
+  downLeft(height, colorEven, colorOdd, symbol);
+}
+
+function upRight(h, evenColor, oddColor, symbol) {
+  let result = "";
+  for (let i = 0; i < h; i++) {
     for (let j = 0; j <= i; j++) {
-      const color = (j % 2 === 0) ? pColorOdd : pColorEven;
-      rhombusStr += `<span style="color:${color}">${pSymbol}</span>&nbsp;`;
+      result += styledSymbol(j, evenColor, oddColor, symbol);
     }
-    rhombusStr += "<br>";
+    result += "\n";
   }
+  document.getElementById("upRight").innerHTML = result;
+}
 
-  // Bottom half
-  for (let i = pHeight - 2; i >= 0; i--) {
-    rhombusStr += "&nbsp;".repeat((pHeight - i - 1) * 2);
+function downRight(h, evenColor, oddColor, symbol) {
+  let result = "";
+  for (let i = h; i > 0; i--) {
+    for (let j = 0; j < i; j++) {
+      result += styledSymbol(j, evenColor, oddColor, symbol);
+    }
+    result += "\n";
+  }
+  document.getElementById("downRight").innerHTML = result;
+}
+
+function upLeft(h, evenColor, oddColor, symbol) {
+  let result = "";
+  for (let i = 0; i < h; i++) {
+    for (let s = 0; s < h - i - 1; s++) result += " ";
     for (let j = 0; j <= i; j++) {
-      const color = (j % 2 === 0) ? pColorOdd : pColorEven;
-      rhombusStr += `<span style="color:${color}">${pSymbol}</span>&nbsp;`;
+      result += styledSymbol(j, evenColor, oddColor, symbol);
     }
-    rhombusStr += "<br>";
+    result += "\n";
   }
+  document.getElementById("upLeft").innerHTML = result;
+}
 
-  document.getElementById("rhombus").innerHTML = rhombusStr;
+function downLeft(h, evenColor, oddColor, symbol) {
+  let result = "";
+  for (let i = h; i > 0; i--) {
+    for (let s = 0; s < h - i; s++) result += " ";
+    for (let j = 0; j < i; j++) {
+      result += styledSymbol(j, evenColor, oddColor, symbol);
+    }
+    result += "\n";
+  }
+  document.getElementById("downLeft").innerHTML = result;
+}
+
+function styledSymbol(pos, evenColor, oddColor, symbol) {
+  const color = (pos % 2 === 0) ? oddColor : evenColor;
+  return `<span style="color:${color}">${symbol}</span>`;
 }
