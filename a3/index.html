@@ -11,20 +11,14 @@
       margin: 20px;
     }
     .rhombus-container {
-      display: grid;
-      grid-template-columns: auto auto;
-      grid-template-rows: auto auto;
-      gap: 10px; /* Small visible space between quadrants */
+      display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
-      margin-top: 30px;
     }
     .section {
-      text-align: center;
-      font-family: monospace;
-      line-height: 1.2;
+      width: 45%;
+      padding: 10px;
     }
-
     #upLeft, #upRight, #downLeft, #downRight {
       font-family: monospace;
       white-space: pre;
@@ -64,14 +58,12 @@
 
   <hr>
 
-  
   <div class="rhombus-container">
-    <div class="section"><pre id="upLeft"></pre></div>
-    <div class="section"><pre id="upRight"></pre></div>
-    <div class="section"><pre id="downLeft"></pre></div>
-    <div class="section"><pre id="downRight"></pre></div>
+    <div class="section" id="upLeft"></div>
+    <div class="section" id="upRight"></div>
+    <div class="section" id="downLeft"></div>
+    <div class="section" id="downRight"></div>
   </div>
-
 
   <script src="rhombus.js"></script>
 </body>
