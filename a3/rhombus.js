@@ -18,10 +18,12 @@ function styledSymbol(pos, evenColor, oddColor, symbol) {
 function upRight(height, colorEven, colorOdd, symbol) {
   let output = "";
   for (let i = 0; i < height; i++) {
+    let line = "";
     for (let j = 0; j <= i; j++) {
-      output += styledSymbol(j, colorEven, colorOdd, symbol);
+      line += styledSymbol(j, colorEven, colorOdd, symbol);
     }
-    output += "<br>";
+    // Add leading spaces to mirror upLeft
+    output += "&nbsp;".repeat(height - i - 1) + line + "<br>";
   }
   document.getElementById("upRight").innerHTML = output;
 }
@@ -29,10 +31,12 @@ function upRight(height, colorEven, colorOdd, symbol) {
 function downRight(height, colorEven, colorOdd, symbol) {
   let output = "";
   for (let i = height; i > 0; i--) {
+    let line = "";
     for (let j = 0; j < i; j++) {
-      output += styledSymbol(j, colorEven, colorOdd, symbol);
+      line += styledSymbol(j, colorEven, colorOdd, symbol);
     }
-    output += "<br>";
+    // Add leading spaces to mirror downLeft
+    output += "&nbsp;".repeat(height - i) + line + "<br>";
   }
   document.getElementById("downRight").innerHTML = output;
 }
