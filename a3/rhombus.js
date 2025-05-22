@@ -1,61 +1,72 @@
-function createRhombus() {
-  const height = parseInt(document.getElementById('rHeight').value);
-  const colorEven = document.getElementById('colorEven').value;
-  const colorOdd = document.getElementById('colorOdd').value;
-  const symbol = document.getElementById('symbol').value;
-
-  upLeft(height, colorEven, colorOdd, symbol);
-  upRight(height, colorEven, colorOdd, symbol);
-  downLeft(height, colorEven, colorOdd, symbol);
-  downRight(height, colorEven, colorOdd, symbol);
+function createRhombus(pHeight, pColorEven, pColorOdd, pSymbol) {
+  upLeft(pHeight, pColorEven, pColorOdd, pSymbol);
+  upRight(pHeight, pColorEven, pColorOdd, pSymbol);
+  downLeft(pHeight, pColorEven, pColorOdd, pSymbol);
+  downRight(pHeight, pColorEven, pColorOdd, pSymbol);
 }
 
-function upLeft(height, even, odd, symbol) {
-  let result = '';
-  for (let i = 0; i < height; i++) {
-    result += '&nbsp;'.repeat(height - i - 1);
+function upLeft(pHeight, pColorEven, pColorOdd, pSymbol) {
+  let rLine = "";
+  for (let i = 0; i < pHeight; i++) {
+    rLine += "<p>";
+    for (let s = 0; s < pHeight - i - 1; s++) {
+      rLine += "<span style='color:white'>&nbsp;</span>";
+    }
     for (let j = 0; j <= i; j++) {
-      const color = j % 2 === 0 ? odd : even;
-      result += `<span style="color:${color};">${symbol}</span>`;
+      if (j % 2)
+        rLine += "<span style='color:" + pColorEven + ";'>" + pSymbol + "</span>";
+      else
+        rLine += "<span style='color:" + pColorOdd + ";'>" + pSymbol + "</span>";
     }
-    result += '<br>';
+    rLine += "</p>";
   }
-  document.getElementById('upLeft').innerHTML = result;
+  document.getElementById("upLeft").innerHTML = rLine;
 }
 
-function upRight(height, even, odd, symbol) {
-  let result = '';
-  for (let i = 0; i < height; i++) {
+function upRight(pHeight, pColorEven, pColorOdd, pSymbol) {
+  let rLine = "";
+  for (let i = 0; i < pHeight; i++) {
+    rLine += "<p>";
     for (let j = 0; j <= i; j++) {
-      const color = j % 2 === 0 ? odd : even;
-      result += `<span style="color:${color};">${symbol}</span>`;
+      if (j % 2)
+        rLine += "<span style='color:" + pColorEven + ";'>" + pSymbol + "</span>";
+      else
+        rLine += "<span style='color:" + pColorOdd + ";'>" + pSymbol + "</span>";
     }
-    result += '<br>';
+    rLine += "</p>";
   }
-  document.getElementById('upRight').innerHTML = result;
+  document.getElementById("upRight").innerHTML = rLine;
 }
 
-function downLeft(height, even, odd, symbol) {
-  let result = '';
-  for (let i = height; i > 0; i--) {
-    result += '&nbsp;'.repeat(height - i);
-    for (let j = 0; j < i; j++) {
-      const color = j % 2 === 0 ? odd : even;
-      result += `<span style="color:${color};">${symbol}</span>`;
+function downLeft(pHeight, pColorEven, pColorOdd, pSymbol) {
+  let rLine = "";
+  for (let i = pHeight; i > 0; i--) {
+    rLine += "<p>";
+    for (let s = 0; s < pHeight - i; s++) {
+      rLine += "<span style='color:white'>&nbsp;</span>";
     }
-    result += '<br>';
+    for (let j = 0; j < i; j++) {
+      if (j % 2)
+        rLine += "<span style='color:" + pColorEven + ";'>" + pSymbol + "</span>";
+      else
+        rLine += "<span style='color:" + pColorOdd + ";'>" + pSymbol + "</span>";
+    }
+    rLine += "</p>";
   }
-  document.getElementById('downLeft').innerHTML = result;
+  document.getElementById("downLeft").innerHTML = rLine;
 }
 
-function downRight(height, even, odd, symbol) {
-  let result = '';
-  for (let i = height; i > 0; i--) {
+function downRight(pHeight, pColorEven, pColorOdd, pSymbol) {
+  let rLine = "";
+  for (let i = pHeight; i > 0; i--) {
+    rLine += "<p>";
     for (let j = 0; j < i; j++) {
-      const color = j % 2 === 0 ? odd : even;
-      result += `<span style="color:${color};">${symbol}</span>`;
+      if (j % 2)
+        rLine += "<span style='color:" + pColorEven + ";'>" + pSymbol + "</span>";
+      else
+        rLine += "<span style='color:" + pColorOdd + ";'>" + pSymbol + "</span>";
     }
-    result += '<br>';
+    rLine += "</p>";
   }
-  document.getElementById('downRight').innerHTML = result;
+  document.getElementById("downRight").innerHTML = rLine;
 }
