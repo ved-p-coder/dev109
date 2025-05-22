@@ -4,22 +4,20 @@
   <meta charset="UTF-8">
   <meta name="description" content="Week 6 - BC - Rhombus">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rhombus Generator</title>
+  <title>Rhombus Generator - Your Name</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
     }
     .rhombus-container {
-      display: grid;
-      grid-template-columns: auto auto;
+      display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
-      gap: 0px;
     }
     .section {
-      padding: 0;
-      text-align: center;
+      width: 45%;
+      padding: 10px;
     }
     #upLeft, #upRight, #downLeft, #downRight {
       font-family: monospace;
@@ -28,7 +26,7 @@
   </style>
 </head>
 <body>
-  <h1>Rhombus Generator-1</h1>
+  <h1>Rhombus Generator - Your Name</h1>
 
   <form onsubmit="event.preventDefault(); createRhombus();">
     <label for="rHeight">Height of Rhombus (number):</label><br>
