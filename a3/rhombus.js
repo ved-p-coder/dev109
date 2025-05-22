@@ -4,24 +4,20 @@ function createRhombus() {
   const colorOdd = document.getElementById("colorOdd").value;
   const symbol = document.getElementById("symbol").value;
 
-  upLeft(height, colorEven, colorOdd, symbol);
   upRight(height, colorEven, colorOdd, symbol);
-  downLeft(height, colorEven, colorOdd, symbol);
   downRight(height, colorEven, colorOdd, symbol);
+  upLeft(height, colorEven, colorOdd, symbol);
+  downLeft(height, colorEven, colorOdd, symbol);
 }
 
 function styledSymbol(pos, evenColor, oddColor, symbol) {
   const color = (pos % 2 === 0) ? oddColor : evenColor;
-  return `<span style="color:${color}">${symbol}</span>`;
+  return <span style="color:${color}">${symbol}</span>;
 }
 
-// FIXED: Add left padding spaces to align right sections properly
 function upRight(height, colorEven, colorOdd, symbol) {
   let output = "";
   for (let i = 0; i < height; i++) {
-    for (let s = 0; s < height; s++) {
-      output += "&nbsp;";
-    }
     for (let j = 0; j <= i; j++) {
       output += styledSymbol(j, colorEven, colorOdd, symbol);
     }
@@ -33,9 +29,6 @@ function upRight(height, colorEven, colorOdd, symbol) {
 function downRight(height, colorEven, colorOdd, symbol) {
   let output = "";
   for (let i = height; i > 0; i--) {
-    for (let s = 0; s < height; s++) {
-      output += "&nbsp;";
-    }
     for (let j = 0; j < i; j++) {
       output += styledSymbol(j, colorEven, colorOdd, symbol);
     }
