@@ -30,10 +30,11 @@
 
   <form onsubmit="event.preventDefault(); createRhombus();">
     <label for="rHeight">Height of Rhombus (number):</label><br>
-    <input type="number" id="rHeight" min="1" value="5" required><br><br>
+    <input type="number" id="rHeight" min="1" value="" required><br><br>
 
     <label for="colorEven">Choose color for Even position:</label><br>
     <select id="colorEven" required>
+      <option value="">-- Select --</option>
       <option value="#0000FF">Blue</option>
       <option value="#FF0000">Red</option>
       <option value="#FF9900">Orange</option>
@@ -41,6 +42,7 @@
 
     <label for="colorOdd">Choose color for Odd position:</label><br>
     <select id="colorOdd" required>
+      <option value="">-- Select --</option>
       <option value="#FF0099">Pink</option>
       <option value="#33FF00">Green</option>
       <option value="#660099">Purple</option>
@@ -48,6 +50,7 @@
 
     <label for="symbol">Choose symbol for Rhombus:</label><br>
     <select id="symbol" required>
+      <option value="">-- Select --</option>
       <option value="*">*</option>
       <option value="$">$</option>
       <option value="@">@</option>
