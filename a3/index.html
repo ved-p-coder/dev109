@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Week 6 - BC - Rhombus">
   <title>Rhombus Generator</title>
   <style>
     body {
@@ -10,6 +9,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-top: 20px;
     }
 
     h2 {
@@ -27,13 +27,16 @@
     #rhombus {
       font-size: 16px;
       line-height: 1.1;
-      white-space: pre;
       text-align: center;
     }
 
     span {
       display: inline-block;
       min-width: 1ch;
+    }
+
+    .rhombus-line {
+      white-space: pre;
     }
   </style>
 </head>
@@ -66,12 +69,8 @@
       <option value="@">@</option>
     </select>
 
-    <button onclick="createRhombus(
-      parseInt(document.getElementById('rHeight').value),
-      document.getElementById('colorEven').value,
-      document.getElementById('colorOdd').value,
-      document.getElementById('symbol').value
-    )">Display Rhombus</button>
+    <div></div>
+    <button onclick="generateRhombus()">Display Rhombus</button>
   </div>
 
   <div id="rhombus"></div>
