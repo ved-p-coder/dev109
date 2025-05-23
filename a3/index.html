@@ -6,34 +6,34 @@
   <title>Rhombus Generator</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-    }
-
-    .container {
-      display: flex;
-      justify-content: center;
-      gap: 20px; /* was larger; now tighter spacing between sections */
-      margin-top: 30px;
-    }
-
-    .rhombus-section {
-      line-height: 1;
+      font-family: monospace;
       text-align: center;
+    }
+
+    #form-section {
+      margin-bottom: 20px;
     }
 
     label, select, input, button {
       display: block;
-      margin: 10px 0;
+      margin: 10px auto;
     }
 
-    #form-section {
-      text-align: center;
+    #rhombus {
+      white-space: pre;
+      font-size: 20px;
+      line-height: 1.1;
+    }
+
+    span {
+      padding: 0;
+      margin: 0;
     }
   </style>
 </head>
 <body>
 
-  <h2 style="text-align:center;">Rhombus Generator - Your Name</h2>
+  <h2>Rhombus Generator - Your Name</h2>
 
   <div id="form-section">
     <label>What is the size of Rhombus?</label>
@@ -61,19 +61,14 @@
     </select>
 
     <button onclick="createRhombus(
-      document.getElementById('rHeight').value,
+      parseInt(document.getElementById('rHeight').value),
       document.getElementById('colorEven').value,
       document.getElementById('colorOdd').value,
       document.getElementById('symbol').value
     )">Display Rhombus</button>
   </div>
 
-  <div class="container">
-    <div id="upLeft" class="rhombus-section"></div>
-    <div id="upRight" class="rhombus-section"></div>
-    <div id="downLeft" class="rhombus-section"></div>
-    <div id="downRight" class="rhombus-section"></div>
-  </div>
+  <div id="rhombus"></div>
 
   <script src="rhombus.js"></script>
 </body>
