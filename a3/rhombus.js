@@ -1,58 +1,31 @@
 function createRhombus(pHeight, pColorEven, pColorOdd, pSymbol) {
-  upRight(pHeight, pColorEven, pColorOdd, pSymbol);
-  downRight(pHeight, pColorEven, pColorOdd, pSymbol);
-  upLeft(pHeight, pColorEven, pColorOdd, pSymbol);
-  downLeft(pHeight, pColorEven, pColorOdd, pSymbol);
-}
+  let output = "";
+  const totalHeight = pHeight * 2;
 
-function upRight(pHeight, pColorEven, pColorOdd, pSymbol) {
-  let rLine = "";
-  for (let i = 0; i < pHeight; i++) {
-    rLine += "<p style='text-align: left;'>";
-    for (let j = 0; j <= i; j++) {
-      let color = (j % 2 === 0) ? pColorOdd : pColorEven;
-      rLine += `<span style='color:${color};'>${pSymbol}</span>`;
-    }
-    rLine += "</p>";
-  }
-  document.getElementById("upRight").innerHTML = rLine;
-}
+  for (let i = 0; i < totalHeight; i++) {
+    let row = "";
 
-function downRight(pHeight, pColorEven, pColorOdd, pSymbol) {
-  let rLine = "";
-  for (let i = pHeight; i > 0; i--) {
-    rLine += "<p style='text-align: left;'>";
-    for (let j = 0; j < i; j++) {
-      let color = (j % 2 === 0) ? pColorOdd : pColorEven;
-      rLine += `<span style='color:${color};'>${pSymbol}</span>`;
-    }
-    rLine += "</p>";
-  }
-  document.getElementById("downRight").innerHTML = rLine;
-}
+    const rowIndex = i < pHeight ? i : totalHeight - i - 1;
+    const numSymbols = rowIndex + 1;
+    const padding = pHeight - rowIndex - 1;
 
-function upLeft(pHeight, pColorEven, pColorOdd, pSymbol) {
-  let rLine = "";
-  for (let i = 0; i < pHeight; i++) {
-    rLine += "<p style='text-align: right;'>";
-    for (let j = 0; j <= i; j++) {
-      let color = (j % 2 === 0) ? pColorOdd : pColorEven;
-      rLine += `<span style='color:${color};'>${pSymbol}</span>`;
-    }
-    rLine += "</p>";
-  }
-  document.getElementById("upLeft").innerHTML = rLine;
-}
+    // Left side spacing
+    row += "&nbsp;".repeat(padding * 2);
 
-function downLeft(pHeight, pColorEven, pColorOdd, pSymbol) {
-  let rLine = "";
-  for (let i = pHeight; i > 0; i--) {
-    rLine += "<p style='text-align: right;'>";
-    for (let j = 0; j < i; j++) {
-      let color = (j % 2 === 0) ? pColorOdd : pColorEven;
-      rLine += `<span style='color:${color};'>${pSymbol}</span>`;
+    // Left half
+    for (let j = 0; j < numSymbols; j++) {
+      const color = (j % 2 === 0) ? pColorOdd : pColorEven;
+      row += `<span style="color:${color};">${pSymbol}</span>`;
     }
-    rLine += "</p>";
+
+    // Right half
+    for (let j = 0; j < numSymbols; j++) {
+      const color = (j % 2 === 0) ? pColorOdd : pColorEven;
+      row += `<span style="color:${color};">${pSymbol}</span>`;
+    }
+
+    output += row + "<br>";
   }
-  document.getElementById("downLeft").innerHTML = rLine;
+
+  document.getElementById("rhombus").innerHTML = output;
 }
