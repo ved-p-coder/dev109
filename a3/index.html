@@ -66,8 +66,12 @@
       <option value="@">@</option>
     </select>
 
-    <div></div>
-    <button onclick="generateRhombus()">Display Rhombus</button>
+    <button onclick="createRhombus(
+      parseInt(document.getElementById('rHeight').value),
+      document.getElementById('colorEven').value,
+      document.getElementById('colorOdd').value,
+      document.getElementById('symbol').value
+    )">Display Rhombus</button>
   </div>
 
   <div id="rhombus"></div>
