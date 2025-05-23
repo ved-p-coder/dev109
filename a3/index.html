@@ -1,65 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="description" content="Week 6 - BC - Rhombus">
-  <title>Rhombus Assignment</title>
+  <title>Rhombus Generator</title>
   <style>
-    /* Optional: make 4 divs align like a rhombus */
-    #rhombusContainer {
-      display: grid;
-      grid-template-columns: auto auto;
-      gap: 10px;
-      margin-top: 20px;
+    body {
+      font-family: Arial, sans-serif;
     }
-    #rhombusContainer div {
-      font-family: monospace;
-      white-space: pre;
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 20px; /* was larger; now tighter spacing between sections */
+      margin-top: 30px;
+    }
+
+    .rhombus-section {
+      line-height: 1;
+      text-align: center;
+    }
+
+    label, select, input, button {
+      display: block;
+      margin: 10px 0;
+    }
+
+    #form-section {
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-  <h2>Rhombus Generator - Your Name</h2>
+  <h2 style="text-align:center;">Rhombus Generator - Your Name</h2>
 
-  <label>What is the size of Rhombus?</label><br>
-  <input type="number" id="rHeight" value="5" min="1" required><br><br>
+  <div id="form-section">
+    <label>What is the size of Rhombus?</label>
+    <input type="number" id="rHeight" value="5" min="1" required>
 
-  <label>Choose color for Even position</label><br>
-  <select id="colorEven" required>
-    <option value="#0000FF">Blue</option>
-    <option value="#FF0000">Red</option>
-    <option value="#FF9900">Orange</option>
-  </select><br><br>
+    <label>Choose color for Even position</label>
+    <select id="colorEven">
+      <option value="#0000FF">Blue</option>
+      <option value="#FF0000">Red</option>
+      <option value="#FF9900">Orange</option>
+    </select>
 
-  <label>Choose color for Odd position</label><br>
-  <select id="colorOdd" required>
-    <option value="#FF0099">Pink</option>
-    <option value="#33FF00">Green</option>
-    <option value="#660099">Purple</option>
-  </select><br><br>
+    <label>Choose color for Odd position</label>
+    <select id="colorOdd">
+      <option value="#FF0099">Pink</option>
+      <option value="#33FF00">Green</option>
+      <option value="#660099">Purple</option>
+    </select>
 
-  <label>Choose symbol for Rhombus</label><br>
-  <select id="symbol" required>
-    <option value="">--Select--</option>
-    <option value="$">$</option>
-    <option value="@">@</option>
-    <option value="^">^</option>
-    <option value="%">%</option>
-  </select><br><br>
+    <label>Choose symbol for Rhombus</label>
+    <select id="symbol">
+      <option value="*">*</option>
+      <option value="$">$</option>
+      <option value="@">@</option>
+    </select>
 
-  <button onclick="createRhombus(
-    document.getElementById('rHeight').value,
-    document.getElementById('colorEven').value,
-    document.getElementById('colorOdd').value,
-    document.getElementById('symbol').value
-  )">Display Rhombus</button>
+    <button onclick="createRhombus(
+      document.getElementById('rHeight').value,
+      document.getElementById('colorEven').value,
+      document.getElementById('colorOdd').value,
+      document.getElementById('symbol').value
+    )">Display Rhombus</button>
+  </div>
 
-  <div id="rhombusContainer">
-    <div id="upLeft"></div>
-    <div id="upRight"></div>
-    <div id="downLeft"></div>
-    <div id="downRight"></div>
+  <div class="container">
+    <div id="upLeft" class="rhombus-section"></div>
+    <div id="upRight" class="rhombus-section"></div>
+    <div id="downLeft" class="rhombus-section"></div>
+    <div id="downRight" class="rhombus-section"></div>
   </div>
 
   <script src="rhombus.js"></script>
