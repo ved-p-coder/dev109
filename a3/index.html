@@ -7,27 +7,33 @@
   <style>
     body {
       font-family: monospace;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    #form-section {
+    h2 {
       margin-bottom: 20px;
     }
 
-    label, select, input, button {
-      display: block;
-      margin: 10px auto;
+    #form-section {
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 10px 20px;
+      align-items: center;
+      margin-bottom: 30px;
     }
 
     #rhombus {
-      white-space: pre;
-      font-size: 20px;
+      font-size: 16px;
       line-height: 1.1;
+      white-space: pre;
+      text-align: center;
     }
 
     span {
-      padding: 0;
-      margin: 0;
+      display: inline-block;
+      min-width: 1ch;
     }
   </style>
 </head>
@@ -36,36 +42,32 @@
   <h2>Rhombus Generator - Your Name</h2>
 
   <div id="form-section">
-    <label>What is the size of Rhombus?</label>
-    <input type="number" id="rHeight" value="5" min="1" required>
+    <label for="rHeight">What is the size of Rhombus?</label>
+    <input type="number" id="rHeight" value="5" min="1">
 
-    <label>Choose color for Even position</label>
+    <label for="colorEven">Choose color for Even position</label>
     <select id="colorEven">
       <option value="#0000FF">Blue</option>
       <option value="#FF0000">Red</option>
       <option value="#FF9900">Orange</option>
     </select>
 
-    <label>Choose color for Odd position</label>
+    <label for="colorOdd">Choose color for Odd position</label>
     <select id="colorOdd">
       <option value="#FF0099">Pink</option>
       <option value="#33FF00">Green</option>
       <option value="#660099">Purple</option>
     </select>
 
-    <label>Choose symbol for Rhombus</label>
+    <label for="symbol">Choose symbol for Rhombus</label>
     <select id="symbol">
       <option value="*">*</option>
       <option value="$">$</option>
       <option value="@">@</option>
     </select>
 
-    <button onclick="createRhombus(
-      parseInt(document.getElementById('rHeight').value),
-      document.getElementById('colorEven').value,
-      document.getElementById('colorOdd').value,
-      document.getElementById('symbol').value
-    )">Display Rhombus</button>
+    <div></div>
+    <button onclick="generateRhombus()">Display Rhombus</button>
   </div>
 
   <div id="rhombus"></div>
