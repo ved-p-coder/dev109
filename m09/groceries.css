@@ -12,9 +12,16 @@ body {
   margin: 0 auto;
 }
 
+#header {
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+
 /* Logo styling */
 h1 {
-  /*background-image: url(images/lionking.png);  Replace or remove if unavailable */
+  background-image: url(images/lionking.png);  /*Replace or remove if unavailable */
   background-repeat: no-repeat;
   background-position: center center;
   text-align: center;
