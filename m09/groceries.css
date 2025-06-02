@@ -113,7 +113,7 @@ only screen and (min-width: 960px) {
 /* Retina display logo */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
   h1 {
-    background-image: url(../img/2xkinglogo.png);
+    background-image: url(img/2xlionking.png);
     background-size: 72px 72px;
   }
 }
