@@ -14,24 +14,17 @@ body {
 
 #header {
   text-align: center;
-  margin: 20px auto;
-  padding: 10px;
+  padding: 20px 0;
+}
+
+#header img {
+  width: 72px;
+  display: inline-block;
 }
 
 
-/* Logo styling */
-h1 {
-  /*background-image: url(images/lionking.png);  /*Replace or remove if unavailable */
-  background-repeat: no-repeat;
-  background-position: center center;
-  text-align: center;
-  text-indent: -1000%;
-  height: 75px;
-  line-height: 75px;
-  width: 117px;
-  margin: 0 auto;
-  padding: 30px 10px 20px 10px;
-}
+
+
 
 h2 {
   color: #fff;
