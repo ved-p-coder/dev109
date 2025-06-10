@@ -1,0 +1,23 @@
+body {
+  height: 100vh;
+  background: beige;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.controls {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 999;
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.dot {
+  position: absolute;
+  border-radius: 50%;
+}
