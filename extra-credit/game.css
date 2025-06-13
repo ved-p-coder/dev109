@@ -1,0 +1,23 @@
+body {
+  text-align: center;
+  font-family: sans-serif;
+  background: #2a3b5e;
+  color: #f0f0f0;
+}
+
+h1 { font-family: Georgia, serif; }
+
+#game {
+  margin: auto;
+  width: 600px;
+}
+
+img { max-width: 100%; }
+
+ul li.found { text-decoration: line-through; color: #888; }
+
+#nextBtn {
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 1.1em;
+}
