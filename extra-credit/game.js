@@ -1,6 +1,6 @@
 const scenes = [
   {
-    img: 'scene1.jpg',
+    img: 'images/scene1.png',
     items: ['Lamp', 'Book', 'Key']
     // and their area coords
   },
