@@ -1,23 +1,45 @@
 body {
+  background-color: #f0f8ff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
-  font-family: sans-serif;
-  background: #2a3b5e;
-  color: #f0f0f0;
+  padding: 20px;
 }
 
-h1 { font-family: Georgia, serif; }
-
-#game {
-  margin: auto;
-  width: 600px;
+h1 {
+  font-family: 'Georgia', serif;
+  color: #003366;
 }
 
-img { max-width: 100%; }
+#instructions {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
 
-ul li.found { text-decoration: line-through; color: #888; }
+#itemList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
 
-#nextBtn {
-  margin: 20px;
-  padding: 10px 20px;
+#itemList li {
   font-size: 1.1em;
+  margin: 5px 0;
+}
+
+#imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#spyImage {
+  max-width: 90%;
+  border: 2px solid #003366;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  margin-top: 20px;
+  cursor: pointer;
 }
