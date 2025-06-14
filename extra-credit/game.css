@@ -1,45 +1,41 @@
 body {
-  background-color: #f0f8ff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial, sans-serif;
   text-align: center;
-  padding: 20px;
+  background-color: #e0f7fa;
 }
 
-h1 {
-  font-family: 'Georgia', serif;
-  color: #003366;
+#game-container {
+  width: 80%;
+  margin: auto;
 }
 
-#instructions {
-  font-size: 1.2em;
-  margin-bottom: 10px;
+.level {
+  display: none;
 }
 
-#itemList {
-  list-style: none;
+.level img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+
+ul {
+  list-style-type: none;
   padding: 0;
-  margin-bottom: 20px;
+  font-size: 1.2em;
 }
 
-#itemList li {
-  font-size: 1.1em;
-  margin: 5px 0;
+li.found {
+  text-decoration: line-through;
+  color: green;
 }
 
-#imageContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#spyImage {
-  max-width: 90%;
-  border: 2px solid #003366;
+.hidden {
+  display: none;
 }
 
 button {
+  margin-top: 20px;
   padding: 10px 20px;
   font-size: 1em;
-  margin-top: 20px;
-  cursor: pointer;
 }
