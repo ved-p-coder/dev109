@@ -3,44 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <title>I Spy Game</title>
-  <link rel="stylesheet" href="game.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>I Spy Game</h1>
-  <p>Find the following items:</p>
-  <ul id="itemList"></ul>
+  <p>Find all 4 hidden objects in each level by clicking on them!</p>
 
-  <div id="level-container">
-    <img id="level1" class="level-image" src="images/level1.png" usemap="#map1" style="display: block;">
-    <img id="level2" class="level-image" src="images/level2.png" usemap="#map2" style="display: none;">
-    <img id="level3" class="level-image" src="images/level3.png" usemap="#map3" style="display: none;">
+  <div id="game-container">
+    <!-- Level Images -->
+    <div id="level1" class="level">
+      <img src="level1.png" usemap="#map1" alt="Level 1">
+      <map name="map1">
+        <area shape="rect" coords="500,220,580,400" href="#" alt="Seahorse" id="seahorse">
+        <area shape="rect" coords="90,160,160,230" href="#" alt="Anchor" id="anchor">
+        <area shape="rect" coords="710,260,780,340" href="#" alt="Globe" id="globe">
+        <area shape="rect" coords="840,430,900,510" href="#" alt="Lantern" id="lantern">
+      </map>
+    </div>
 
-    <!-- Image Map for Level 1 -->
-    <map name="map1">
-      <area id="anchor" shape="rect" coords="85,190,140,250" href="#" alt="Anchor">
-      <area id="globe" shape="rect" coords="700,300,750,350" href="#" alt="Globe">
-      <area id="telescope" shape="rect" coords="340,400,400,450" href="#" alt="Telescope">
-      <area id="seahorse" shape="rect" coords="520,280,580,360" href="#" alt="Seahorse">
-    </map>
+    <div id="level2" class="level hidden">
+      <img src="level2.png" usemap="#map2" alt="Level 2">
+      <map name="map2">
+        <area shape="circle" coords="360,130,80" href="#" alt="Red Hard Hat" id="hat">
+        <area shape="circle" coords="220,150,40" href="#" alt="Baseball" id="baseball">
+        <area shape="circle" coords="860,120,100" href="#" alt="Soccer Ball" id="ball">
+        <area shape="rect" coords="500,240,580,320" href="#" alt="Shuttlecock" id="rocket">
+      </map>
+    </div>
 
-    <!-- Image Map for Level 2 -->
-    <map name="map2">
-      <area id="soccer" shape="circle" coords="860,180,50" href="#" alt="Soccer Ball">
-      <area id="hardhat" shape="circle" coords="300,180,50" href="#" alt="Hard Hat">
-      <area id="bluebat" shape="rect" coords="560,300,640,360" href="#" alt="Blue Bat">
-      <area id="tennis" shape="rect" coords="200,450,270,500" href="#" alt="Tennis Racket">
-    </map>
+    <div id="level3" class="level hidden">
+      <img src="level3.png" usemap="#map3" alt="Level 3">
+      <map name="map3">
+        <area shape="rect" coords="40,380,120,460" href="#" alt="Falcon" id="falcon">
+        <area shape="rect" coords="150,500,250,610" href="#" alt="Shield" id="shield">
+        <area shape="rect" coords="830,610,970,730" href="#" alt="Bow and Arrow" id="bow">
+        <area shape="rect" coords="760,20,860,110" href="#" alt="Flag" id="pin">
+      </map>
+    </div>
 
-    <!-- Image Map for Level 3 -->
-    <map name="map3">
-      <area id="helmet" shape="rect" coords="100,600,160,660" href="#" alt="Knight Helmet">
-      <area id="falcon" shape="rect" coords="60,400,120,460" href="#" alt="Falcon">
-      <area id="bucket" shape="rect" coords="180,600,240,660" href="#" alt="Red Bucket">
-      <area id="shield" shape="rect" coords="150,520,230,590" href="#" alt="Dragon Shield">
-    </map>
+    <!-- Items to Find List -->
+    <ul id="items-list">
+      <!-- Items will be filled dynamically -->
+    </ul>
+
+    <button id="nextLevel" class="hidden">Next Level</button>
+    <div id="winMessage" class="hidden">
+      <h2>You won!</h2>
+      <button onclick="replay()">Play Again</button>
+    </div>
   </div>
 
-  <button id="nextBtn" style="display: none;">Next Level</button>
-  <script src="game.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
