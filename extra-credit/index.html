@@ -3,13 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <title>I Spy Game</title>
-  <link rel="stylesheet" href="game.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>I Spy Game</h1>
-  <div id="game"></div>
-  <button id="nextBtn" style="display:none">Next</button>
-  <script src="game.js"></script>
+  <p>Find the following items:</p>
+  <ul id="itemList"></ul>
+
+  <div id="level-container">
+    <img id="level1" class="level-image" src="level1.png" usemap="#map1" style="display: block;">
+    <img id="level2" class="level-image" src="level2.png" usemap="#map2" style="display: none;">
+    <img id="level3" class="level-image" src="level3.png" usemap="#map3" style="display: none;">
+
+    <!-- Image Map for Level 1 -->
+    <map name="map1">
+      <area id="anchor" shape="rect" coords="85,190,140,250" href="#" alt="Anchor">
+      <area id="globe" shape="rect" coords="700,300,750,350" href="#" alt="Globe">
+      <area id="telescope" shape="rect" coords="340,400,400,450" href="#" alt="Telescope">
+      <area id="seahorse" shape="rect" coords="520,280,580,360" href="#" alt="Seahorse">
+    </map>
+
+    <!-- Image Map for Level 2 -->
+    <map name="map2">
+      <area id="soccer" shape="circle" coords="860,180,50" href="#" alt="Soccer Ball">
+      <area id="hardhat" shape="circle" coords="300,180,50" href="#" alt="Hard Hat">
+      <area id="bluebat" shape="rect" coords="560,300,640,360" href="#" alt="Blue Bat">
+      <area id="tennis" shape="rect" coords="200,450,270,500" href="#" alt="Tennis Racket">
+    </map>
+
+    <!-- Image Map for Level 3 -->
+    <map name="map3">
+      <area id="helmet" shape="rect" coords="100,600,160,660" href="#" alt="Knight Helmet">
+      <area id="falcon" shape="rect" coords="60,400,120,460" href="#" alt="Falcon">
+      <area id="bucket" shape="rect" coords="180,600,240,660" href="#" alt="Red Bucket">
+      <area id="shield" shape="rect" coords="150,520,230,590" href="#" alt="Dragon Shield">
+    </map>
+  </div>
+
+  <button id="nextBtn" style="display: none;">Next Level</button>
+  <script src="script.js"></script>
 </body>
 </html>
-
